@@ -1,0 +1,142 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: antiquewhite;
+}
+
+.containerall{
+    padding: 0;
+}
+
+.bordergreen{
+    background-color: #5c9c5c;
+    height: 100px;
+    position: relative;
+}
+
+.container_chat{
+    background-color: blue;
+    height: calc(100vh - 70px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    padding: 0;
+}
+
+.container_card{
+    overflow-y: auto;
+    max-height: 100%;
+}
+
+.sidebar{
+    width: 400px;
+    height: 100%;
+    background-color: #edeeef;
+    overflow-y: auto;
+}
+
+.chat{
+    background-color: black;
+   width: calc(100% - 400px);
+}
+
+/* SIDEBAR */
+
+.avatar-select{
+    height: 60px;
+    background-color: #dbd8d4;
+    border-right: 1px solid black;
+}
+
+.notifiche{
+    height: 60px;
+    background-color: #85c1f9;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.card_{
+    height: 60px;
+    background-color: #edeeef;
+    border-bottom:1px solid #d2c6c6 ;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+img{
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%;
+    object-fit: cover;
+  
+}
+
+.last_msg{
+    font-size: 10px;
+}
+
+.text{
+    line-height: 1;
+}
+
+.input_sidebar {
+    background-color: rgb(239, 233, 233);
+}
+
+.search-container {
+    position: relative;
+    padding: 3px;
+}
+
+.search {
+    width: 100%;
+    padding-left: 30px; 
+    box-sizing: border-box;
+    border: 1px solid gray;
+    height: 40px; 
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px; 
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.bell{
+    background-color: white;
+    color: #85c1f9;
+    padding: 13px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 10px;
+}
+
+.icon{
+    color: gray;
+}
+
+/* MAIN MSG */
+
+
+.send_msg{
+    height: 60px;
+    background-color: white;
+}
+
+.input_msg{
+    width: 100%;
+    padding: 7px;
+    margin: 0 auto;
+}
