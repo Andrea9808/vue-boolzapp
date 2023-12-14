@@ -5,7 +5,11 @@
 }
 
 body{
-    background-color: antiquewhite;
+    background-color: #ceccca;
+}
+
+i{
+    padding: 5px;
 }
 
 .containerall{
@@ -132,13 +136,13 @@ img{
 
 .send_msg{
     height: 60px;
-    background-color: white;
+    background-color: #f6efef;
     text-align: center;
     margin-top: auto;
 }
 
 .input_msg{
-    width: 80%;
+    width: 90%;
     padding: 7px 0 ;
     margin: 0 auto;
 }

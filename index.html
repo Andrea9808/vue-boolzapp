@@ -18,8 +18,9 @@
 </head>
 
 <body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-    <div class="container-fluid containerall">
+    <div class="container-fluid containerall" id="app">
 
         <!-- BORDO VERDE -->
         <div class="bordergreen">
@@ -33,8 +34,8 @@
 
                 <div class="avatar-select d-flex align-items-center justify-content-between">
                     <div class="px-3 text">
-                        <img src="img/user1.png" alt="">
-                        <span>Andrea M.</span><br>
+                        <img src="img/user1.png" alt="img profilo">
+                        <span class="mx-2">Andrea M.</span>
                     </div>
                     <div class="px-3 icon">
                         <i class="fa-solid fa-circle-notch"></i>
@@ -60,59 +61,12 @@
                     </div>
                 </div>
 
+                <!-- CARD GENERATE DINAMICAMENTE CON CICLO V-FOR -->
                 <div class="container_card">
-                    <div class="card_">
-                        <img src="img/persona1.jpg" alt="">
+                    <div v-for="(contact, index) in contacts" :key="index" class="card_">
+                        <img :src="contact.avatar" :alt="contact.name">
                         <div class="px-3 text">
-                            <span>Veronica L.</span><br>
-                            <span class="last_msg">Ultimo messaggio inviato</span>
-                        </div>
-                    </div>
-
-                    <div class="card_">
-                        <img src="img/persona2.jpg" alt="">
-                        <div class="px-3 text">
-                            <span>Massimo A.</span><br>
-                            <span class="last_msg">Ultimo messaggio inviato</span>
-                        </div>
-                    </div>
-
-                    <div class="card_">
-                        <img src="img/persona3.jpg" alt="">
-                        <div class="px-3 text">
-                            <span>Laura P.</span><br>
-                            <span class="last_msg">Ultimo messaggio inviato</span>
-                        </div>
-                    </div>
-
-                    <div class="card_">
-                        <img src="img/persona4.jpg" alt="">
-                        <div class="px-3 text">
-                            <span>Giulio L.</span><br>
-                            <span class="last_msg">Ultimo messaggio inviato</span>
-                        </div>
-                    </div>
-
-                    <div class="card_">
-                        <img src="img/persona5.jpg" alt="">
-                        <div class="px-3 text">
-                            <span>Lara U.</span><br>
-                            <span class="last_msg">Ultimo messaggio inviato</span>
-                        </div>
-                    </div>
-
-                    <div class="card_">
-                        <img src="img/persona6.jpg" alt="">
-                        <div class="px-3 text">
-                            <span>Rosa H.</span><br>
-                            <span class="last_msg">Ultimo messaggio inviato</span>
-                        </div>
-                    </div>
-
-                    <div class="card_">
-                        <img src="img/persona7.jpg" alt="">
-                        <div class="px-3 text">
-                            <span>Mauro W.</span><br>
+                            <span>{{ contact.name }}</span><br>
                             <span class="last_msg">Ultimo messaggio inviato</span>
                         </div>
                     </div>
@@ -144,14 +98,11 @@
                     <div class="messages-container" id="messages-container">
 
                         <div class="message">
-                            <span>sdbshnb</span>
+                            <span></span>
                         </div>
-                        <div class="message">
-                            <span>sdbshnb</span>
-                        </div>
-
+                       
                         <div class="response">
-                            <span>sdvbh</span>
+                            <span></span>
                         </div>
                     </div>
 
@@ -175,6 +126,8 @@
 
 
         </div>
+
+        <script src="js/script.js"></script>
 
 </body>
 
