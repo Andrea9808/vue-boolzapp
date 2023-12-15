@@ -98,7 +98,8 @@
                     <div v-if="contattoAttivo" class="messages-container" id="messages-container">
 
                         <div v-for="(message, index) in contattoAttivo.messages" :key="index" class="message" :class ="{'response':message.status === 'received'}">
-                            <span>{{message.message}}</span>
+                            <span>{{message.message}}</span><br>
+                            <span class="date_send">Inviato alle {{message.date}}</span>
                         </div>
                         
                     </div>

@@ -184,3 +184,7 @@ img{
     color: black; 
     margin-left: 0;
 }
+
+.date_send{
+    font-size: 8px;
+}
