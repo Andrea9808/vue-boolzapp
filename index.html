@@ -75,6 +75,8 @@
             </div>
 
             <!-- MAIN CHAT -->
+
+             <!-- solo se viene posta la condizione (contatto attivo diverso da 0) allora genera il resto -->
             <div class="chat" v-if="contattoAttivo">
 
                 <div class="avatar-select d-flex align-items-center justify-content-between">
@@ -95,6 +97,8 @@
                 </div>
 
                 <div class="main_msg">
+
+                    <!-- solo se viene posta la condizione (contatto attivo diverso da 0) allora genera il resto -->
                     <div v-if="contattoAttivo" class="messages-container" id="messages-container">
 
                         <!-- aggiungo classe response se message.status è uguale a received -->
