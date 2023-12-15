@@ -149,8 +149,26 @@ createApp({
                 
             ],
             
+            // inizzializzo una variabile (contattoAttivo) in null
             contattoAttivo: null, 
         }
     },
+
+
+   
+    methods:{
+
+        //seleziono il primo contatto della chat all'avvio dell'app
+        selezionePrimoContatto() {
+            if (this.contacts.length > 0) {
+                this.contattoAttivo = this.contacts[0];
+            }
+        },
+
+         //al click della card
+        selezioneContattoAttivo(contatto){
+            this.contattoAttivo = contatto;
+        }
+    }
 
 }).mount("#app");

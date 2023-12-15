@@ -63,7 +63,7 @@
 
                 <!-- CARD GENERATE DINAMICAMENTE CON CICLO V-FOR -->
                 <div class="container_card">
-                    <div v-for="(contact, index) in contacts" :key="index" class="card_">
+                    <div v-for="(contact, index) in contacts" :key="index" class="card_" @click="selezioneContattoAttivo(contact)">
                         <img :src="contact.avatar" :alt="contact.name">
                         <div class="px-3 text">
                             <span>{{ contact.name }}</span><br>
@@ -75,14 +75,14 @@
             </div>
 
             <!-- MAIN CHAT -->
-            <div class="chat">
+            <div class="chat" v-if="contattoAttivo">
 
                 <div class="avatar-select d-flex align-items-center justify-content-between">
 
                     <div class="px-3 text d-flex align-items-center">
-                        <img src="img/persona1.jpg" alt="">
+                        <img :src="contattoAttivo.avatar" :alt="contattoAttivo.name">
                         <div class="px-3">
-                            <span>Veronica L.</span><br>
+                            <span>{{contattoAttivo.name}}</span><br>
                             <span class="last_msg">Ultimo accesso oggi alle 12.00</span>
                         </div>
                     </div>
@@ -95,18 +95,12 @@
                 </div>
 
                 <div class="main_msg">
-                    <div class="messages-container" id="messages-container">
+                    <div v-if="contattoAttivo" class="messages-container" id="messages-container">
 
-                        <div class="message">
-                            <span>sdbshnb</span>
+                        <div v-for="(message, index) in contattoAttivo.messages" :key="index" class="message" :class ="{'response':message.status === 'received'}">
+                            <span>{{message.message}}</span>
                         </div>
-                        <div class="message">
-                            <span>sdbshnb</span>
-                        </div>
-
-                        <div class="response">
-                            <span>sdvbh</span>
-                        </div>
+                        
                     </div>
 
                     <div class="send_msg d-flex align-items-center justify-content-between px-3">
