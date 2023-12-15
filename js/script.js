@@ -149,8 +149,8 @@ createApp({
                 
             ],
             
-            // inizzializzo una variabile (contattoAttivo) in null
-            contattoAttivo: null, 
+            // inizzializzo una variabile (contattoAttivo) 
+            contattoAttivo: 0, 
         }
     },
 
@@ -172,7 +172,7 @@ createApp({
     },
 
     mounted(){
-        
+
         this.selezionePrimoContatto();
     }
 
