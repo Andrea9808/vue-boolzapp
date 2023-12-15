@@ -147,11 +147,10 @@ createApp({
                     ],
                 },
                 
-            ]
+            ],
             
-             
+            contattoAttivo: null, 
         }
-    }
-
+    },
 
 }).mount("#app");
