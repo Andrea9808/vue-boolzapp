@@ -151,9 +151,14 @@ createApp({
             
             // inizzializzo una variabile (contattoAttivo) 
             contattoAttivo: 0, 
+
+            
         }
+
+        
     },
 
+    
 
    
     methods:{
@@ -164,8 +169,9 @@ createApp({
                 this.contattoAttivo = this.contacts[0];
             }
         },
+        
 
-         //al click della card
+        //al click della card
         selezioneContattoAttivo(contatto){
             this.contattoAttivo = contatto;
         }
