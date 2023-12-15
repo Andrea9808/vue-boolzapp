@@ -154,6 +154,9 @@ createApp({
 
             //inizializzo il nuovo messaggio per farlo partire vuoto
             nuovoMessaggio: "",
+
+            timerRisposta:0,
+
         }
 
         
@@ -177,6 +180,8 @@ createApp({
             this.contattoAttivo = contatto;
         },
 
+
+        //scrivo messaggio
         aggiungiMessaggio(){
             this.contattoAttivo.messages.push({
                 date: "10/01/2020 15:50:00", //esempio
@@ -185,12 +190,35 @@ createApp({
             })
 
             this.nuovoMessaggio = "";
-        }
+
+            this.risposta();
+            
+        },
+        //clearInterval(this.timerRisposta);
+       
+        
+        //risposta automatica dopo 1 s
+
+        risposta() {
+
+            this.timerRisposta = setInterval(() => {
+
+                this.contattoAttivo.messages.push({
+                    date: "10/01/2020 15:50:00", //esempio
+                    message: "ok",
+                    status: "received",
+
+                });
+                
+            }, 1000);
+        },
+        
     },
 
     mounted(){
 
         this.selezionePrimoContatto();
+        
     }
 
 }).mount("#app");
