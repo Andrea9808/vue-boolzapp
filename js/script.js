@@ -155,6 +155,7 @@ createApp({
             //inizializzo il nuovo messaggio per farlo partire vuoto
             nuovoMessaggio: "",
 
+            //inizializzo variabile per setTimeout
             timerRisposta:0,
 
         }
@@ -194,9 +195,9 @@ createApp({
             this.risposta();
             
         },
-        //clearInterval(this.timerRisposta);
        
-        
+       
+
         //risposta automatica dopo 1 s
 
         risposta() {
@@ -207,8 +208,11 @@ createApp({
                     date: "10/01/2020 15:50:00", //esempio
                     message: "ok",
                     status: "received",
+                    
 
                 });
+
+                clearInterval(this.timerRisposta);
                 
             }, 1000);
         },
