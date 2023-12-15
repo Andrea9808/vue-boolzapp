@@ -169,6 +169,11 @@ createApp({
         selezioneContattoAttivo(contatto){
             this.contattoAttivo = contatto;
         }
+    },
+
+    mounted(){
+        
+        this.selezionePrimoContatto();
     }
 
 }).mount("#app");
