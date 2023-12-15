@@ -152,7 +152,8 @@ createApp({
             // inizzializzo una variabile (contattoAttivo) 
             contattoAttivo: 0, 
 
-            
+            //inizializzo il nuovo messaggio per farlo partire vuoto
+            nuovoMessaggio: "",
         }
 
         
@@ -174,6 +175,16 @@ createApp({
         //al click della card
         selezioneContattoAttivo(contatto){
             this.contattoAttivo = contatto;
+        },
+
+        aggiungiMessaggio(){
+            this.contattoAttivo.messages.push({
+                date: "10/01/2020 15:50:00", //esempio
+                message: this.nuovoMessaggio,
+                status: "sent",
+            })
+
+            this.nuovoMessaggio = "";
         }
     },
 

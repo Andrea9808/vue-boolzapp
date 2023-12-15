@@ -114,7 +114,7 @@
                             <i class="fa-regular fa-face-smile"></i>
                         </div>
                         <div class="flex-grow-1 px-2">
-                            <input type="text" placeholder="Scrivi messaggio" class="input_msg ">
+                            <input type="text" placeholder="Scrivi messaggio" class="input_msg " v-model="nuovoMessaggio" @keyup.enter="aggiungiMessaggio">
                         </div>
                         <div class="icon_msg">
                             <i class="fa-solid fa-microphone"></i>
