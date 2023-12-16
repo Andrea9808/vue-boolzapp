@@ -161,6 +161,9 @@ createApp({
             //ricerca nomi impostato con v-model sull'input di ricerca contatti
             ricercaNomi: "",
 
+            //inizzializzo la chevron per farla comparire solo al passaggio del mouse
+            mostraFreccia: false,
+
         }
 
         
@@ -225,8 +228,15 @@ createApp({
                 
             }, 1000);
         },
+
+        //cencellazione messaggio
+        cancellaMessaggio(index){
+            this.contattoAttivo.messages.splice(index,1);
+        },
+
         
     },
+    
 
     mounted(){
 
