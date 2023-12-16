@@ -57,13 +57,15 @@
                 <div class="input_sidebar">
                     <div class="search-container">
                         <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
-                        <input class="search" type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input class="search" type="text" placeholder="Cerca o inizia una nuova chat" v-model="ricercaNomi">
                     </div>
                 </div>
 
                 <!-- CARD GENERATE DINAMICAMENTE CON CICLO V-FOR -->
                 <div class="container_card">
-                    <div v-for="(contact, index) in contacts" :key="index" class="card_" @click="selezioneContattoAttivo(contact)">
+
+                    <!-- v-for per ciclare tutti i contatti compresi quelli filtrati -->
+                    <div v-for="(contact, index) in filtroContatti" :key="index" class="card_" @click="selezioneContattoAttivo(contact)" tabindex="0">
                         <img :src="contact.avatar" :alt="contact.name">
                         <div class="px-3 text">
                             <span>{{ contact.name }}</span><br>

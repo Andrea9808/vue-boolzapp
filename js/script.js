@@ -158,12 +158,27 @@ createApp({
             //inizializzo variabile per setTimeout
             timerRisposta:0,
 
+            //ricerca nomi impostato con v-model sull'input di ricerca contatti
+            ricercaNomi: "",
+
         }
 
         
     },
 
-    
+    //funzione per filtri di ricerca:
+
+    //SPIEGAZIONE:
+    //computed:la caratteristica delle proprietà computate è che vengono memorizzate nella cache e vengono ricalcolate solo se una delle dipendenze cambia.
+
+    //creo la funzione filtro contatti e ritorno un filter. Dall'array di oggetti contacts filtro solo gli elementi che soddisfano una determinata condizione, dopo confronto il nome di ciascun contatto  (toLowerCase converte la stringa in minuscolo) che include "ricercaNomi" convertito sempre in minuscolo, confrontandolo con includes mi restituisce "true" se la stringa "ricercaNomi" è inclusa nel nome del contatto.
+    computed:{
+        filtroContatti(){
+            return this.contacts.filter( contact =>
+                contact.name.toLowerCase().includes(this.ricercaNomi.toLowerCase())
+            );
+        },
+    },
 
    
     methods:{
@@ -196,23 +211,17 @@ createApp({
             
         },
        
-       
-
-        //risposta automatica dopo 1 s
-
+        //risposta automatica dopo 1s
         risposta() {
 
-            this.timerRisposta = setInterval(() => {
+            this.timerRisposta = setTimeout(() => {
 
                 this.contattoAttivo.messages.push({
                     date: "10/01/2020 15:50:00", //esempio
                     message: "ok",
                     status: "received",
-                    
-
+                
                 });
-
-                clearInterval(this.timerRisposta);
                 
             }, 1000);
         },
