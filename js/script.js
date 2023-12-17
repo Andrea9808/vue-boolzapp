@@ -2,9 +2,9 @@ const { createApp } = Vue;
 
 createApp({
 
-    data(){
+    data() {
 
-        return{
+        return {
 
             contacts: [
                 {
@@ -146,17 +146,17 @@ createApp({
                         }
                     ],
                 },
-                
+
             ],
-            
+
             // inizzializzo una variabile (contattoAttivo) 
-            contattoAttivo: 0, 
+            contattoAttivo: 0,
 
             //inizializzo il nuovo messaggio per farlo partire vuoto
             nuovoMessaggio: "",
 
             //inizializzo variabile per setTimeout
-            timerRisposta:0,
+            timerRisposta: 0,
 
             //ricerca nomi impostato con v-model sull'input di ricerca contatti
             ricercaNomi: "",
@@ -166,7 +166,7 @@ createApp({
 
         }
 
-        
+
     },
 
     //funzione per filtri di ricerca:
@@ -175,16 +175,16 @@ createApp({
     //computed:la caratteristica delle proprietà computate è che vengono memorizzate nella cache e vengono ricalcolate solo se una delle dipendenze cambia.
 
     //creo la funzione filtro contatti e ritorno un filter. Dall'array di oggetti contacts filtro solo gli elementi che soddisfano una determinata condizione, dopo confronto il nome di ciascun contatto  (toLowerCase converte la stringa in minuscolo) che include "ricercaNomi" convertito sempre in minuscolo, confrontandolo con includes mi restituisce "true" se la stringa "ricercaNomi" è inclusa nel nome del contatto.
-    computed:{
-        filtroContatti(){
-            return this.contacts.filter( contact =>
+    computed: {
+        filtroContatti() {
+            return this.contacts.filter(contact =>
                 contact.name.toLowerCase().includes(this.ricercaNomi.toLowerCase())
             );
         },
     },
 
 
-    methods:{
+    methods: {
 
         //seleziono il primo contatto della chat all'avvio dell'app
         selezionePrimoContatto() {
@@ -192,20 +192,20 @@ createApp({
                 this.contattoAttivo = this.contacts[0];
             }
         },
-        
+
 
         //al click della card
-        selezioneContattoAttivo(contatto){
+        selezioneContattoAttivo(contatto) {
             this.contattoAttivo = contatto;
-            
+
         },
 
 
         //scrivo messaggio
-        aggiungiMessaggio(){
+        aggiungiMessaggio() {
 
             //.trim rimuove gli spazi bianchi
-            if(this.nuovoMessaggio.trim() !== ''){
+            if (this.nuovoMessaggio.trim() !== '') {
 
                 this.contattoAttivo.messages.push({
                     date: "10/01/2020 15:50:00", //esempio
@@ -215,10 +215,10 @@ createApp({
 
                 this.nuovoMessaggio = '';
                 this.risposta();
-            } 
-                 
+            }
+
         },
-       
+
         //risposta automatica dopo 1s
         risposta() {
 
@@ -227,26 +227,46 @@ createApp({
                 this.contattoAttivo.messages.push({
 
                     date: "10/01/2020 15:50:00", //esempio
-                    message: "ok",
+                    message: "Al momento non posso parlare, scusami. (messaggio inviato automaticamente)",
                     status: "received",
-                
+
                 });
-                
+
             }, 1000);
         },
 
         //cencellazione messaggio
-        cancellaMessaggio(index){
-            this.contattoAttivo.messages.splice(index,1);
+        cancellaMessaggio(index) {
+            this.contattoAttivo.messages.splice(index, 1);
         },
-   
-    },
-    
 
-    mounted(){
+
+        //mostra l'ultimo messaggio all'interno della sidebar
+        ultimoMessaggio(contatto) {
+            
+            //console.log("Contatto:", contatto);
+
+            if (contatto.messages.length > 0) {
+
+                const lastMsg = contatto.messages[contatto.messages.length - 1];
+                //console.log("Ultimo messaggio:", lastMsg);
+
+                return lastMsg.message;
+
+            } else {
+
+                return "";
+
+            }
+        }
+
+    },
+
+
+    mounted() {
 
         this.selezionePrimoContatto();
-        
+
     }
 
 }).mount("#app");

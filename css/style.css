@@ -38,7 +38,7 @@ i{
 }
 
 .sidebar{
-    min-width: 400px;
+    width: 400px;
     height: 100%;
     background-color: #edeeef;
     overflow-y: auto;

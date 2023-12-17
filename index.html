@@ -69,7 +69,7 @@
                         <img :src="contact.avatar" :alt="contact.name">
                         <div class="px-3 text">
                             <span>{{ contact.name }}</span><br>
-                            <span class="last_msg">Ultimo messaggio inviato</span>
+                            <span class="last_msg">{{ ultimoMessaggio(contact) }}</span>
                         </div>
                     </div>
                 </div>
