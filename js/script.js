@@ -183,7 +183,7 @@ createApp({
         },
     },
 
-   
+
     methods:{
 
         //seleziono il primo contatto della chat all'avvio dell'app
@@ -197,21 +197,26 @@ createApp({
         //al click della card
         selezioneContattoAttivo(contatto){
             this.contattoAttivo = contatto;
+            
         },
 
 
         //scrivo messaggio
         aggiungiMessaggio(){
-            this.contattoAttivo.messages.push({
-                date: "10/01/2020 15:50:00", //esempio
-                message: this.nuovoMessaggio,
-                status: "sent",
-            })
 
-            this.nuovoMessaggio = "";
+            //.trim rimuove gli spazi bianchi
+            if(this.nuovoMessaggio.trim() !== ''){
 
-            this.risposta();
-            
+                this.contattoAttivo.messages.push({
+                    date: "10/01/2020 15:50:00", //esempio
+                    message: this.nuovoMessaggio,
+                    status: "sent",
+                })
+
+                this.nuovoMessaggio = '';
+                this.risposta();
+            } 
+                 
         },
        
         //risposta automatica dopo 1s
@@ -220,6 +225,7 @@ createApp({
             this.timerRisposta = setTimeout(() => {
 
                 this.contattoAttivo.messages.push({
+
                     date: "10/01/2020 15:50:00", //esempio
                     message: "ok",
                     status: "received",
@@ -233,8 +239,7 @@ createApp({
         cancellaMessaggio(index){
             this.contattoAttivo.messages.splice(index,1);
         },
-
-        
+   
     },
     
 
