@@ -208,7 +208,7 @@ createApp({
             if (this.nuovoMessaggio.trim() !== '') {
 
                 this.contattoAttivo.messages.push({
-                    date: "10/01/2020 15:50:00", //esempio
+                    date: this.europaDate(new Date()),
                     message: this.nuovoMessaggio,
                     status: "sent",
                 })
@@ -226,7 +226,7 @@ createApp({
 
                 this.contattoAttivo.messages.push({
 
-                    date: "10/01/2020 15:50:00", //esempio
+                    date: this.europaDate(new Date()),
                     message: "Al momento non posso parlare, scusami. (messaggio inviato automaticamente)",
                     status: "received",
 
@@ -250,6 +250,7 @@ createApp({
 
                 const lastMsg = contatto.messages[contatto.messages.length - 1];
                 //console.log("Ultimo messaggio:", lastMsg);
+                
 
                 return lastMsg.message;
 
@@ -258,6 +259,13 @@ createApp({
                 return "";
 
             }
+        },
+
+
+        //modifica ora e data msg (al momento solo di quelli inviati e ricevuti)
+        europaDate(date) {
+            const options = { day: 'numeric', month: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+            return new Date(date).toLocaleDateString('it-IT', options);
         }
 
     },
