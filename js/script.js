@@ -252,7 +252,7 @@ createApp({
                 //console.log("Ultimo messaggio:", lastMsg);
                 
 
-                return lastMsg.message;
+                return `${lastMsg.message} - ${this.europaDate(new Date())}` 
 
             } else {
 
@@ -262,7 +262,7 @@ createApp({
         },
 
 
-        //modifica ora e data msg (al momento solo di quelli inviati e ricevuti)
+        //modifica ora e data msg (al momento solo di quelli nuovi (inviati e ricevuti))
         europaDate(date) {
             const options = { day: 'numeric', month: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
             return new Date(date).toLocaleDateString('it-IT', options);
