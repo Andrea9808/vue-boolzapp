@@ -31,7 +31,7 @@
         <div class="container container_chat">
 
             <div class="sidebar">
-
+                
                 <div class="avatar-select d-flex align-items-center justify-content-between">
                     <div class="px-3 text">
                         <img src="img/user1.png" alt="img profilo">
@@ -87,7 +87,7 @@
                         <img :src="contattoAttivo.avatar" :alt="contattoAttivo.name">
                         <div class="px-3">
                             <span>{{contattoAttivo.name}}</span><br>
-                            <span class="last_msg">Ultimo accesso oggi alle 12.00</span>
+                            <span class="last_msg">Ultimo accesso {{ europaDate(new Date()) }}</span>
                         </div>
                     </div>
                     <div class="px-3 icon">
@@ -134,7 +134,7 @@
                             <input type="text" placeholder="Scrivi messaggio" class="input_msg " v-model="nuovoMessaggio" @keyup.enter="aggiungiMessaggio">
                         </div>
                         <div class="icon_msg">
-                            <i class="fa-solid fa-microphone"></i>
+                            <i @click="aggiungiMessaggio" class="fa-solid fa-microphone"></i>
                         </div>
                     </div>
 

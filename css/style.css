@@ -190,6 +190,10 @@ img{
     font-size: 8px;
 }
 
+.fa-microphone{
+    cursor: pointer;
+}
+
 /* DROPDOWN */
 .fa-chevron-down{
     cursor: pointer;
