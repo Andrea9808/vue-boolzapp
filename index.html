@@ -143,6 +143,23 @@
 
             </div>
 
+            <!-- MESSAGGIO DI BENVENUTO, PRIMA DI APRIRE CHAT -->
+            <!-- se non è stato selezionato alcun contatto attiva il v-if -->
+            <div class="welcome-message" v-if="!contattoAttivo && filtroContatti.length > 0">
+                <div>
+                    <img class="logo" src="img/Logo-WhatsApp-700x394.png" alt="logo">
+                </div>
+                <div>
+                    <h3>Boolzapp per windows</h3>
+                    <p>Invia e ricevi messaggi senza mantenere il telefono connesso a Intenet. Usa Boolzapp su un massimo di 4 dispositivi e 1 telefono contemporaneamente.</p>
+                    <h4>Per iniziare seleziona una chat dai tuoi contatti</h4>
+                </div>
+                <div>
+                    <h6>Protetto da crittografia end-to-end</h6>
+                </div>
+            </div>
+
+            
 
 
         </div>

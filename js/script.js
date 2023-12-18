@@ -187,11 +187,11 @@ createApp({
     methods: {
 
         //seleziono il primo contatto della chat all'avvio dell'app
-        selezionePrimoContatto() {
-            if (this.contacts.length > 0) {
-                this.contattoAttivo = this.contacts[0];
-            }
-        },
+        // selezionePrimoContatto() {
+        //     if (this.contacts.length > 0) {
+        //         this.contattoAttivo = this.contacts[0];
+        //     }
+        // },
 
 
         //al click della card
