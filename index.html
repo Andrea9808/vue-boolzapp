@@ -133,8 +133,9 @@
                         <div class="flex-grow-1 px-2">
                             <input type="text" placeholder="Scrivi messaggio" class="input_msg " v-model="nuovoMessaggio" @keyup.enter="aggiungiMessaggio">
                         </div>
-                        <div class="icon_msg">
-                            <i @click="aggiungiMessaggio" class="fa-solid fa-microphone"></i>
+                        <div  @click="aggiungiMessaggio" class="icon_msg">
+                            <i v-if="nuovoMessaggio.trim() === ''" class="fa-solid fa-microphone"></i>
+                            <i v-else class="fa-solid fa-paper-plane"></i>
                         </div>
                     </div>
 

@@ -194,6 +194,15 @@ img{
     cursor: pointer;
 }
 
+
+.fa-paper-plane:hover{
+    background-color: #5c9c5c;
+    color: white;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
 /* DROPDOWN */
 .fa-chevron-down{
     cursor: pointer;
